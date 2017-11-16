@@ -1,0 +1,34 @@
+﻿<Window x:Class="Stopwatch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stopwatch"
+        mc:Ignorable="d"
+        Title="Секундомер" Height="350" Width="525" Loaded="Window_Loaded" Icon="icon.ico" StateChanged="Window_StateChanged"
+        MinHeight="350" MinWidth="525">
+    <Grid Background="Aqua">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="3" BorderBrush="Red" Background="Black"  Margin="10" HorizontalAlignment="Center">
+        <TextBlock x:Name="TimerLabel" Foreground="Wheat" Padding="5,0" Text="00:00:00:000" FontFamily="Segoe UI" FontSize="50"  VerticalAlignment="Center"/>
+        </Border>
+        <Border Grid.Row="1" Margin="20" BorderThickness="3" BorderBrush="Red">
+            <ListBox x:Name="lbox" Background="PapayaWhip" Foreground="Brown"/>
+        </Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnstart" Content="Start" Margin="5" Click="start"/>
+            <Button x:Name="btnreset" Content="Stop" Margin="5" Grid.Column="1" Click="reset"/>
+            <Button x:Name="btnlap" Content="Lap" Margin="5" Grid.Column="2" Click="lap"/>
+        </Grid>
+
+    </Grid>
+</Window>

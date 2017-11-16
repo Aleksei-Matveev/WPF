@@ -1,0 +1,18 @@
+﻿<Window x:Class="ConverterBool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConverterBool"
+        xmlns:converter="clr-namespace:ConverterBool.Converter"
+        mc:Ignorable="d"
+        Title="Converter bool" Height="350" Width="525">
+    <Window.Resources>
+        <converter:IsChecked x:Key="isChecked"/>
+    </Window.Resources>
+    <StackPanel DataContext="{Binding ElementName=checkBox}">
+        <TextBox x:Name="textBox" IsReadOnly ="{Binding Path=IsChecked, Converter={StaticResource isChecked}}"
+                 Text="Проверка текстового поля"/>
+        <CheckBox  x:Name="checkBox">Запретить редактирование</CheckBox>
+    </StackPanel>
+</Window>
